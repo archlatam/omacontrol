@@ -20,8 +20,10 @@ paths:
   singleton: every colour comes back undefined, the window draws black on
   black, and the journal says only `Cannot read property 'text' of undefined`.
   Pages and `ui/` read colours from `Palette`; `Palette.qml` and `Panel.qml`
-  read the theme as `Commons.Color`, through `import qs.Commons as Commons`.
-  On Qt 6.11 the bare name still works, so nothing here will show it.
+  read the theme as `Commons.ShellColor`, through `import qs.Commons as
+  Commons`. Omarchy renamed that singleton `Color` → `ShellColor` in 4.0.6
+  (omacom/omarchy#14560), and `Commons.Color` is `undefined` there — the same
+  black window, so name it `ShellColor` and no QtQuick can take it.
 - **The `Palette` singleton needs an explicit directory import.** Files in
   `ui/` use `import "." as Local` and `Local.Palette.foreground`; the implicit
   directory import does not resolve it here.
@@ -86,7 +88,7 @@ paths:
   already exists in base type` (the window has carried it from the start) and
   `Type PanelWindow is not creatable`, which Omarchy's own bar and menu raise
   on the same type. Unqualified-access and missing-property notes on `Style`
-  and `Color` are singletons qmllint cannot follow.
+  and `ShellColor` are singletons qmllint cannot follow.
 
   Even so, the authoritative check is the shell loading the file.
 

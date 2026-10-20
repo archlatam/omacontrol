@@ -138,7 +138,7 @@ BarWidget {
     width: Math.max(height, count.implicitWidth + Style.space(8))
     height: Style.space(16)
     radius: height / 2
-    color: Commons.Color.bar.active
+    color: Commons.ShellColor.bar.active
 
     Text {
       id: count
@@ -152,7 +152,7 @@ BarWidget {
         : root.markDevices ? "\udb82\udd4b"
         : String(root.badgeCount)
       textFormat: Text.PlainText
-      color: Commons.Color.bar.background
+      color: Commons.ShellColor.bar.background
       font.family: Style.font.family
       font.pixelSize: Style.font.caption
       font.bold: true

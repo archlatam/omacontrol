@@ -18,12 +18,12 @@ import qs.Commons as Commons
 QtObject {
   id: palette
 
-  readonly property color foreground: Commons.Color.popups.text
+  readonly property color foreground: Commons.ShellColor.popups.text
   // Popup surfaces are allowed to be translucent; a window full of text is
   // not, so the same colour is taken at full opacity.
-  readonly property color background: Qt.rgba(Commons.Color.popups.background.r, Commons.Color.popups.background.g, Commons.Color.popups.background.b, 1)
-  readonly property color accent: Commons.Color.accent
-  readonly property color urgent: Commons.Color.urgent
+  readonly property color background: Qt.rgba(Commons.ShellColor.popups.background.r, Commons.ShellColor.popups.background.g, Commons.ShellColor.popups.background.b, 1)
+  readonly property color accent: Commons.ShellColor.accent
+  readonly property color urgent: Commons.ShellColor.urgent
 
   // A charge level is red, amber or green in every window that has ever shown
   // one, and a theme supplies only the red. The other two are struck from that
